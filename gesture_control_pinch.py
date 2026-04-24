@@ -2,7 +2,7 @@ import cv2
 
 from hand_tracking_pinch import HandTracker
 # from utils import draw_boxes, get_selection
-from filters import brightness, sepia, emboss, duo_tone, tv_60
+from filters import brightness, sepia, emboss, duo_tone, tv_60, sunglasses
 
 
 FILTERS = [
@@ -10,8 +10,9 @@ FILTERS = [
     ("Sepia", sepia.apply),
     ("Emboss", lambda f: emboss.apply(f, size=5, direction=1)),
     ("Bright", lambda f: brightness.apply(f, 1.3)),
-    ("DuoTone", lambda f: duo_tone.apply(f, 1.3, 2, 1, "dark")),
+    ("DuoTone", lambda f: duo_tone.apply(f, 1.3, 2, 1, "light")),
     ("TV", lambda f: tv_60.apply(f, 80, 40)),
+    ("Sunglasses", sunglasses.apply),
 ]
 
 
