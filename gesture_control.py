@@ -3,7 +3,7 @@ import cv2
 from hand_tracking import HandTracker
 from utils import draw_boxes, get_selection
 
-from filters import brightness, sepia, emboss, duo_tone, tv_60
+from filters import brightness, sepia, emboss, duo_tone, tv_60, sunglasses
 
 
 # ---------------- FILTER REGISTRY ----------------
@@ -14,6 +14,7 @@ FILTERS = [
     ("Bright", lambda f: brightness.apply(f, 1.3)),
     ("DuoTone", lambda f: duo_tone.apply(f, 1.3, 2, 1, "dark")),
     ("TV", lambda f: tv_60.apply(f, 80, 40)),
+    ("Sunglasses", sunglasses.apply),
 ]
 
 
